@@ -76,6 +76,7 @@ Started with read-only tools (search across Invoices/Leads/Products/Tasks + the 
 
 Telegram question → agent with two RAG tools (policy + product knowledge) → Telegram answer.
 
+![WF5 customer service agent canvas](docs/screenshots/05-customer-service.png)
 ![WF5 customer service, live conversation](docs/screenshots/05-customer-service-telegram.png)
 ![WF5 customer service, execution](docs/screenshots/05-customer-service-executions.png)
 
@@ -91,6 +92,7 @@ One Airtable trigger + validation/numbering logic per table (Receipts, Invoices,
 
 Search existing Leads by email → skip create on a match, create on a genuine new lead.
 
+![WF3 contact intake canvas](docs/screenshots/03-contact-intake.png)
 ![WF3 duplicate correctly skipped](docs/screenshots/03-contact-intake-dedup-true-branch.png)
 ![WF3 new lead created](docs/screenshots/03-contact-intake-new-lead-false-branch.png)
 ![WF3 Leads table after a new lead](docs/screenshots/03-contact-intake-new-lead.png)
