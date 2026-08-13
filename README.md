@@ -32,6 +32,8 @@ Airtable is the database. n8n Cloud runs all the automation and the agents. Docu
 
 n8n Cloud gives a public HTTPS URL out of the box, so the Telegram bots and the app webhook work with no tunnel.
 
+A colored, node-level version of this diagram — plus one diagram per workflow — lives in [`docs/diagrams/`](docs/diagrams/), starting with the [legend](docs/diagrams/00-legend.md) and the [overall architecture](docs/diagrams/99-overall-architecture.md).
+
 ### Models
 
 Both configured in n8n credentials, swappable — no workflow is tied to a vendor.
@@ -147,10 +149,10 @@ Single webhook-triggered agent behind a server-side shared-secret check, powerin
 schema/schema.json     ← single source of truth (8 tables)
 mock/policies/          ← policy/business-rule docs (*.md), embedded into Qdrant
 mock/products/          ← product catalogue (CSV), embedded into Qdrant
-templates/              ← invoice/receipt/tax-invoice HTML (RTL Hebrew)
-docs/                   ← setup notes + workflow screenshots
+templates/              ← invoice/tax-invoice HTML + a separate receipt HTML (RTL Hebrew)
+docs/                   ← setup notes, workflow screenshots, and diagrams
 ```
 
 ## Docs
 
-1. [Airtable setup](docs/01-airtable.md) · 2. [Telegram bots](docs/02-telegram-bots.md) · 3. [Google OAuth](docs/03-google-oauth.md) · 4. [Building the workflows](docs/04-workflows.md)
+1. [Airtable setup](docs/01-airtable.md) · 2. [Telegram bots](docs/02-telegram-bots.md) · 3. [Google OAuth](docs/03-google-oauth.md) · 4. [Building the workflows](docs/04-workflows.md) · 5. [Diagrams](docs/diagrams/00-legend.md)

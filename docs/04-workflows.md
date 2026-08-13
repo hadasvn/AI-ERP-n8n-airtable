@@ -47,7 +47,7 @@ Run both by hand after any n8n instance restart or credential change — the alt
 
 ## WF8 — Document → PDF → Drive
 
-Three Airtable triggers (Receipts/Invoices/TaxInvoices, on `Status = Pending`) → **Merge** → **Build HTML** (RTL Hebrew, from `templates/invoice-template.html`) → **Convert to PDF** → **Upload to Drive** → **Switch** (route by doc type) → three **Update** nodes writing `PdfUrl` back to the source record.
+Three Airtable triggers (Receipts/Invoices/TaxInvoices, on `Status = Pending`) → **Merge** → **Build HTML** (RTL Hebrew — `templates/invoice-template.html` for Invoices/TaxInvoices, `templates/receipt-template.html` for Receipts, since Receipts have no LineItems/VAT fields to render) → **Convert to PDF** → **Upload to Drive** → **Switch** (route by doc type) → three **Update** nodes writing `PdfUrl` back to the source record.
 
 The Airtable Trigger's polling field has to be a real Created/Last-modified time field — Receipts and TaxInvoices needed one added manually (see `docs/01-airtable.md`), since only Invoices had one from the start.
 
