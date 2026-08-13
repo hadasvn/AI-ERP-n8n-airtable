@@ -1,0 +1,156 @@
+{
+  "base": "AI-ERP",
+  "baseId": "appz4KYMjbfCca0wa",
+  "currency": "₪",
+  "tables": [
+    {
+      "name": "Customers",
+      "id": "tblCI3VjHjqkwa6Hq",
+      "fields": [
+        { "name": "CustomerId", "type": "singleLineText" },
+        { "name": "Name", "type": "singleLineText" },
+        { "name": "Email", "type": "email" },
+        { "name": "Phone", "type": "phoneNumber" },
+        { "name": "Company", "type": "singleLineText" },
+        { "name": "BusinessNumber", "type": "singleLineText" },
+        { "name": "Address", "type": "singleLineText" },
+        { "name": "City", "type": "singleLineText" },
+        { "name": "Status", "type": "singleLineText" },
+        { "name": "Notes", "type": "multilineText" }
+      ]
+    },
+    {
+      "name": "Leads",
+      "id": "tblOsFVqVgxoHeEU1",
+      "fields": [
+        { "name": "LeadId", "type": "singleLineText" },
+        { "name": "Name", "type": "singleLineText" },
+        { "name": "Email", "type": "email" },
+        { "name": "Phone", "type": "phoneNumber" },
+        { "name": "Company", "type": "singleLineText" },
+        { "name": "Source", "type": "singleSelect", "options": ["Website", "Referral", "ColdEmail", "Exhibition", "SocialMedia"] },
+        { "name": "Interest", "type": "singleLineText" },
+        { "name": "Status", "type": "singleLineText" },
+        { "name": "GmailThreadId", "type": "singleLineText" },
+        { "name": "LastContactedAt", "type": "dateTime" },
+        { "name": "Notes", "type": "multilineText" },
+        { "name": "Created", "type": "createdTime" }
+      ]
+    },
+    {
+      "name": "Products",
+      "id": "tblGGRksH0TmD45qq",
+      "fields": [
+        { "name": "ProductId", "type": "singleLineText" },
+        { "name": "SKU", "type": "singleLineText" },
+        { "name": "Name", "type": "singleLineText" },
+        { "name": "Category", "type": "singleLineText" },
+        { "name": "Brand", "type": "singleLineText" },
+        { "name": "Description", "type": "multilineText" },
+        { "name": "Price", "type": "number" },
+        { "name": "Cost", "type": "currency" },
+        { "name": "Stock", "type": "number" },
+        { "name": "InStock", "type": "singleLineText" },
+        { "name": "SupplierId", "type": "singleLineText" },
+        { "name": "Warranty", "type": "singleLineText" },
+        { "name": "Status", "type": "singleLineText" }
+      ]
+    },
+    {
+      "name": "Invoices",
+      "id": "tblt8MpupCP4dR3hZ",
+      "fields": [
+        { "name": "InvoiceNumber", "type": "singleLineText" },
+        { "name": "DocNumber", "type": "number" },
+        { "name": "CustomerId", "type": "singleLineText" },
+        { "name": "CustomerName", "type": "singleLineText" },
+        { "name": "IssueDate", "type": "date" },
+        { "name": "DueDate", "type": "date" },
+        { "name": "LineItems", "type": "multilineText" },
+        { "name": "Subtotal", "type": "currency" },
+        { "name": "VATRate", "type": "percent" },
+        { "name": "VatAmount", "type": "number" },
+        { "name": "Amount", "type": "number" },
+        { "name": "Total", "type": "number" },
+        { "name": "Status", "type": "singleLineText" },
+        { "name": "ValidationError", "type": "singleLineText" },
+        { "name": "OrderId", "type": "singleLineText" },
+        { "name": "PdfUrl", "type": "singleLineText" },
+        { "name": "Created", "type": "createdTime" }
+      ]
+    },
+    {
+      "name": "TaxInvoices",
+      "id": "tblDElnR3UYyeLC29",
+      "fields": [
+        { "name": "TaxInvoiceId", "type": "singleLineText" },
+        { "name": "DocNumber", "type": "number" },
+        { "name": "CustomerId", "type": "singleLineText" },
+        { "name": "CustomerName", "type": "singleLineText" },
+        { "name": "CustomerBusinessNumber", "type": "singleLineText" },
+        { "name": "IssueDate", "type": "date" },
+        { "name": "LineItems", "type": "multilineText" },
+        { "name": "Subtotal", "type": "currency" },
+        { "name": "VATRate", "type": "percent" },
+        { "name": "VATAmount", "type": "currency" },
+        { "name": "Total", "type": "currency" },
+        { "name": "Status", "type": "singleLineText" },
+        { "name": "ValidationError", "type": "singleLineText" },
+        { "name": "PdfUrl", "type": "url" },
+        { "name": "Created", "type": "lastModifiedTime" }
+      ]
+    },
+    {
+      "name": "Receipts",
+      "id": "tbl1xQUOvo163eUpO",
+      "fields": [
+        { "name": "ReceiptId", "type": "singleLineText" },
+        { "name": "DocNumber", "type": "number" },
+        { "name": "CustomerId", "type": "singleLineText" },
+        { "name": "CustomerName", "type": "singleLineText" },
+        { "name": "IssueDate", "type": "date" },
+        { "name": "Amount", "type": "currency" },
+        { "name": "PaymentMethod", "type": "singleLineText" },
+        { "name": "RelatedInvoice", "type": "singleLineText" },
+        { "name": "Status", "type": "singleLineText" },
+        { "name": "ValidationError", "type": "singleLineText" },
+        { "name": "PdfUrl", "type": "url" },
+        { "name": "Created", "type": "lastModifiedTime" }
+      ]
+    },
+    {
+      "name": "Tasks",
+      "id": "tblVjcozOwNW8QO3n",
+      "fields": [
+        { "name": "TaskId", "type": "singleLineText" },
+        { "name": "Title", "type": "singleLineText" },
+        { "name": "Description", "type": "multilineText" },
+        { "name": "ProjectId", "type": "singleLineText" },
+        { "name": "AssignedTo", "type": "singleLineText" },
+        { "name": "DueDate", "type": "date" },
+        { "name": "Priority", "type": "singleLineText" },
+        { "name": "Status", "type": "singleLineText" }
+      ]
+    },
+    {
+      "name": "Files",
+      "id": "tblr8tLwciVHlnlNP",
+      "fields": [
+        { "name": "FileId", "type": "singleLineText" },
+        { "name": "DocType", "type": "singleSelect", "options": ["Invoice", "TaxInvoice", "Receipt", "PriceQuote", "Report"] },
+        { "name": "SourceRecordId", "type": "singleLineText" },
+        { "name": "Status", "type": "singleSelect", "options": ["Pending", "Processing", "Done", "Failed"] },
+        { "name": "DriveLink", "type": "url" },
+        { "name": "DriveFileId", "type": "singleLineText" },
+        { "name": "Year", "type": "singleLineText" },
+        { "name": "Month", "type": "singleLineText" },
+        { "name": "ErrorMessage", "type": "singleLineText" }
+      ]
+    }
+  ],
+  "notes": [
+    "Created fields on Invoices/Leads are Airtable 'Created time' (auto). TaxInvoices/Receipts use 'Last modified time' instead, so WF8's Airtable Trigger also fires on status updates (added manually — the Airtable API cannot create these field types).",
+    "VATRate is stored as a decimal fraction (e.g. 0.18 for 18%), not a whole number.",
+    "Relationships (CustomerId, RelatedInvoice, etc.) are plain text identifiers, not Airtable's native link field."
+  ]
+}
