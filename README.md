@@ -62,23 +62,19 @@ Workflow 1 is split into three (one per document table) instead of a single shar
 
 ## Screenshots
 
-All of these are the live n8n Cloud canvases and Telegram runs — the repo itself holds no runnable workflow code.
+All of these are the live n8n Cloud canvases — the repo itself holds no runnable workflow code.
 
 ### WF9 — Manager agent (Telegram bot #1)
 
 Started with read-only tools (search across Invoices/Leads/Products/Tasks + the two RAG tools); billing-document creation tools (`create_invoice`, `create_tax_invoice`, `create_receipt`) were added later.
 
 ![WF9 manager agent canvas](docs/screenshots/09-manager-agent.png)
-![WF9 manager agent, executed run](docs/screenshots/09-manager-agent-run.png)
-![WF9 manager agent, full execution structure](docs/screenshots/09-manager-agent-execution-full.png)
 
 ### WF5 — Customer service agent (Telegram bot #2)
 
 Telegram question → agent with two RAG tools (policy + product knowledge) → Telegram answer.
 
 ![WF5 customer service agent canvas](docs/screenshots/05-customer-service.png)
-![WF5 customer service, live conversation](docs/screenshots/05-customer-service-telegram.png)
-![WF5 customer service, execution](docs/screenshots/05-customer-service-executions.png)
 
 ### WF1a/b/c — Tax-document validation
 
@@ -93,17 +89,12 @@ One Airtable trigger + validation/numbering logic per table (Receipts, Invoices,
 Search existing Leads by email → skip create on a match, create on a genuine new lead.
 
 ![WF3 contact intake canvas](docs/screenshots/03-contact-intake.png)
-![WF3 duplicate correctly skipped](docs/screenshots/03-contact-intake-dedup-true-branch.png)
-![WF3 new lead created](docs/screenshots/03-contact-intake-new-lead-false-branch.png)
-![WF3 Leads table after a new lead](docs/screenshots/03-contact-intake-new-lead.png)
-![WF3 Leads table after dedup cleanup](docs/screenshots/03-contact-intake-dedup-result.png)
 
 ### WF4a / WF4b — Sales agent
 
 Cold email generation + send, and a separate workflow that watches for replies and drafts a response.
 
 ![WF4a cold-email canvas](docs/screenshots/04a-sales-cold-emails.png)
-![WF4a cold-email, live run](docs/screenshots/04a-sales-cold-emails-run.png)
 ![WF4b reply check canvas](docs/screenshots/04b-sales-reply-check.png)
 
 ### WF6 / WF7 — Embedding pipelines (Qdrant)
@@ -111,9 +102,7 @@ Cold email generation + send, and a separate workflow that watches for replies a
 Same shape for both: trigger → load documents → embed → Qdrant insert.
 
 ![WF6 policies embedding canvas](docs/screenshots/06-policies-embedding.png)
-![WF6 policies embedding, 62 items ingested](docs/screenshots/06-policies-embedding-run-62-items.png)
 ![WF7 products embedding canvas](docs/screenshots/07-products-embedding.png)
-![WF7 products embedding, 34 items ingested](docs/screenshots/07-products-embedding-run-34-items.png)
 
 ### WF8 — Document → PDF → Drive
 
@@ -125,8 +114,7 @@ Three Airtable pending-document triggers → merged → HTML build (RTL Hebrew) 
 
 Single webhook-triggered agent behind a server-side shared-secret check, powering the Lovable admin app's chat and record-creation flows.
 
-![WF13 app gateway, part 1](docs/screenshots/13-app-gateway-1.png)
-![WF13 app gateway, part 2](docs/screenshots/13-app-gateway-2.png)
+![WF13 app gateway canvas](docs/screenshots/13-app-gateway.png)
 
 ---
 
