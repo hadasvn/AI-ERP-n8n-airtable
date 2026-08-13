@@ -134,6 +134,12 @@ Single webhook-triggered agent behind a server-side shared-secret check, powerin
 
 ![WF13 app gateway canvas](docs/screenshots/13-app-gateway.png)
 
+### Admin app dashboard (Lovable)
+
+The other side of WF13 — a single-user dashboard (revenue, open leads/invoices, tasks) with a persistent chat panel wired to the WF13 webhook.
+
+![Admin app dashboard](docs/screenshots/dashboard.png)
+
 ---
 
 ## Known limitations
