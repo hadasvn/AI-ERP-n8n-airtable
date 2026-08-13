@@ -78,10 +78,18 @@ Telegram question → agent with two RAG tools (policy + product knowledge) → 
 
 ### WF1a/b/c — Tax-document validation
 
-One Airtable trigger + validation/numbering logic per table (Receipts, Invoices, TaxInvoices).
+One Airtable trigger + validation/numbering logic per table (Receipts, Invoices, TaxInvoices) instead of one shared workflow.
+
+WF1a — Receipts have no VAT fields, so this one only assigns the next sequential document number:
 
 ![WF1a Receipts](docs/screenshots/01a-tax-doc-validation-receipts.png)
+
+WF1b — Invoices also get their VAT rate checked against Israeli law (18% from 2025-01-01, 17% before):
+
 ![WF1b Invoices](docs/screenshots/01b-tax-doc-validation-invoices.png)
+
+WF1c — same VAT check as Invoices, on the TaxInvoices table:
+
 ![WF1c TaxInvoices](docs/screenshots/01c-tax-doc-validation-taxinvoices.png)
 
 ### WF3 — Contact intake + dedupe
@@ -92,16 +100,24 @@ Search existing Leads by email → skip create on a match, create on a genuine n
 
 ### WF4a / WF4b — Sales agent
 
-Cold email generation + send, and a separate workflow that watches for replies and drafts a response.
+WF4a — every 3 hours, picks exactly one new lead (deliberately one per run, so a mistake can't send dozens of emails at once), drafts a personalized cold email, sends it, and marks the lead contacted:
 
 ![WF4a cold-email canvas](docs/screenshots/04a-sales-cold-emails.png)
+
+WF4b — every 30 minutes, checks for unread replies, matches them to a lead, pulls the full email thread (not just the latest message), and has an agent draft the next reply:
+
 ![WF4b reply check canvas](docs/screenshots/04b-sales-reply-check.png)
 
 ### WF6 / WF7 — Embedding pipelines (Qdrant)
 
-Same shape for both: trigger → load documents → embed → Qdrant insert.
+Same shape for both: trigger → load documents → embed → Qdrant insert. Run by hand after any change to the source files, or after an n8n instance restart.
+
+WF6 — policy documents, chunked before embedding, into the `ai_erp_policies` collection:
 
 ![WF6 policies embedding canvas](docs/screenshots/06-policies-embedding.png)
+
+WF7 — product catalogue rows (already short, no chunking needed), into the `ai_erp_products` collection:
+
 ![WF7 products embedding canvas](docs/screenshots/07-products-embedding.png)
 
 ### WF8 — Document → PDF → Drive
