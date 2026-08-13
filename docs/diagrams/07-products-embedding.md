@@ -1,6 +1,6 @@
 # WF7 — Products embedding (Qdrant)
 
-Same shape as WF6, without a text splitter — product catalogue rows are already short. Inserted into the `ai_erp_products` collection.
+Same shape as WF6, including a text splitter — the product CSV rows are combined with descriptions long enough to still benefit from chunking. Inserted into the `ai_erp_products` collection.
 
 ```mermaid
 flowchart LR
@@ -10,10 +10,12 @@ flowchart LR
 
     T["Trigger<br/><small>manual / form</small>"]:::trigger
     L["Default Data Loader"]:::subnode
+    SP["Character Text Splitter"]:::subnode
     E["Embeddings OpenAI"]:::subnode
     Q["Qdrant · Insert<br/><small>ai_erp_products</small>"]:::app
 
     T --> Q
     Q -.-> L
+    L -.-> SP
     Q -.-> E
 ```

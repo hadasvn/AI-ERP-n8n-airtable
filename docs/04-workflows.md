@@ -41,7 +41,7 @@ Scheduled trigger → search Leads with `Status = New` → chat model drafts the
 
 ## WF6 / WF7 — Embedding pipelines (Qdrant)
 
-Same shape for both: trigger → **Default Data Loader** → **Character Text Splitter** (policies only — the product CSV rows are already short) → **Qdrant Vector Store** (mode: Insert). Two separate Qdrant collections (`ai_erp_policies`, `ai_erp_products`) so the two domains never mix in retrieval.
+Same shape for both: trigger → **Default Data Loader** → **Character Text Splitter** → **Qdrant Vector Store** (mode: Insert). Two separate Qdrant collections (`ai_erp_policies`, `ai_erp_products`) so the two domains never mix in retrieval.
 
 Run both by hand after any n8n instance restart or credential change — the alternative to Qdrant here is n8n's built-in in-memory vector store, which is wiped on every restart; that's the reason this build uses Qdrant instead.
 

@@ -118,7 +118,7 @@ WF6 — policy documents, chunked before embedding, into the `ai_erp_policies` c
 
 ![WF6 policies embedding canvas](docs/screenshots/06-policies-embedding.png)
 
-WF7 — product catalogue rows (already short, no chunking needed), into the `ai_erp_products` collection:
+WF7 — product catalogue rows, chunked the same way as policies, into the `ai_erp_products` collection:
 
 ![WF7 products embedding canvas](docs/screenshots/07-products-embedding.png)
 
