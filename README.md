@@ -1,6 +1,8 @@
 # AI-ERP with n8n + Airtable
 
-A small ERP for a fictional Israeli electronics business, built with **n8n**, **Airtable**, and three specialized **AI agents** grounded in **RAG**. Everything runs on n8n Cloud + Airtable — no server, no local install.
+A full backend ERP for a fictional Israeli electronics business — built solo, end to end: 10 n8n workflows, 3 AI agents, RAG search, Israeli tax-compliant document generation, and a connected admin web app. Everything runs on managed cloud services (n8n Cloud + Airtable + Qdrant Cloud) — no server to provision or maintain.
+
+Built with **n8n**, **Airtable**, and three specialized **AI agents** grounded in **RAG**.
 
 Airtable is the database. n8n Cloud runs all the automation and the agents. Documents render to PDF and land in Google Drive. A separate admin web app (built in Lovable) talks to n8n over a secured webhook for a human-friendly dashboard and chat interface.
 
